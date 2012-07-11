@@ -1,0 +1,35 @@
+Package: neuroanat
+Type: Package
+Title: Analyse 3D biological image data with a focus on traced neurons
+Version: 0.1
+Date: 2012-07-11
+Author: Greg Jefferis
+Maintainer: Greg Jefferis <jefferis@gmail.com>
+Description: This package is a thin wrapper around the AnalysisSuite
+    (https://github.com/jefferis/AnalysisSuite) bundle of R code that I have
+    been using for a number of years to analyse and visualise 3D bioogical
+    image data, especially traced neurons. The idea is that this will
+    immediately make it rather easier to install AnalysisSuite and that over
+    time it should be possible to migrate many of the AnalysisSuite functions
+    (currently in a loose bundle of R source code files and associated data)
+    into this formal R package.
+    AnalysisSuite provides functions to read/write a variety of 3D image
+    formats including Amira, NRRD and Biorad PIC and can interact with the CMTK
+    and IRTK image
+    registration suites. There is read/write functionality for neuron tracings
+    including SWC, Amiramesh (lineset and skeletonize), Neurolucida ASC.
+    These data can then be visualised (including in 3D via rgl) or analysed
+    including applying calculated
+    registrations from image data to neuron tracings. There is also some recent
+    functionality for representing image data for neurons that have been
+    skeletonised but not formally traced. This representation also allows
+    morphological comparison with neurons including searches/clustering.
+Depends:
+    rgl,
+    RANN
+Suggests:
+    testthat
+License: GPL (>= 2)
+LazyLoad: yes
+Collate:
+    ''
