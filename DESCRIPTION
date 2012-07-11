@@ -14,16 +14,15 @@ Description: This package is a thin wrapper around the AnalysisSuite
     (currently in a loose bundle of R source code files and associated data)
     into this formal R package.
     AnalysisSuite provides functions to read/write a variety of 3D image
-    formats including Amira, NRRD and Biorad PIC and can interact with the CMTK
-    and IRTK image
-    registration suites. There is read/write functionality for neuron tracings
-    including SWC, Amiramesh (lineset and skeletonize), Neurolucida ASC.
-    These data can then be visualised (including in 3D via rgl) or analysed
-    including applying calculated
-    registrations from image data to neuron tracings. There is also some recent
-    functionality for representing image data for neurons that have been
-    skeletonised but not formally traced. This representation also allows
-    morphological comparison with neurons including searches/clustering.
+    formats including Amira, NRRD and Biorad PIC and can interact with the
+    CMTK and IRTK image registration suites. There is read/write functionality
+    for neuron tracings including SWC, Amiramesh (lineset and skeletonize),
+    Neurolucida ASC. These data can then be visualised (including in 3D via
+    rgl) or analysed including applying calculated registrations from image
+    data to neuron tracings. There is also some recent functionality for
+    representing image data for neurons that have been skeletonised but not
+    formally traced. This representation also allows morphological comparison
+    with neurons including searches/clustering.
 Depends:
     rgl,
     RANN
@@ -32,4 +31,4 @@ Suggests:
 License: GPL (>= 2)
 LazyLoad: yes
 Collate:
-    ''
+    'neuronanat-package.R'
