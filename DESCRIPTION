@@ -32,3 +32,5 @@ License: GPL (>= 2)
 LazyLoad: yes
 Collate:
     'neuronanat-package.R'
+    'neuron.R'
+    'neuronlist.R'
