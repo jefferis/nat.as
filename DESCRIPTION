@@ -26,6 +26,8 @@ Description: This package is a thin wrapper around the AnalysisSuite
 Depends:
     rgl,
     RANN
+Imports:
+    httr
 Suggests:
     testthat
 License: GPL (>= 2)
@@ -34,3 +36,4 @@ Collate:
     'neuronanat-package.R'
     'neuron.R'
     'neuronlist.R'
+    'install.R'
