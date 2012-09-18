@@ -7,7 +7,7 @@ Author: Greg Jefferis
 Maintainer: Greg Jefferis <jefferis@gmail.com>
 Description: This package is a thin wrapper around the AnalysisSuite
     (https://github.com/jefferis/AnalysisSuite) bundle of R code that I have
-    been using for a number of years to analyse and visualise 3D bioogical
+    been using for a number of years to analyse and visualise 3D biological
     image data, especially traced neurons. The idea is that this will
     immediately make it rather easier to install AnalysisSuite and that over
     time it should be possible to migrate many of the AnalysisSuite functions
