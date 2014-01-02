@@ -1,2 +1,4 @@
 # man/
 .settings
+/man
+.Rproj.user
