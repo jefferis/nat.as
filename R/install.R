@@ -35,7 +35,7 @@ download_zip<-function(zip_url,zip_dir='.',zip_file=NULL){
     zip_file=sub(".*filename=",'',h$headers[['content-disposition']])
   }
   
-  zip_path=file.path(zip_dir,zip_file)  
+  zip_path=normalizePath(file.path(zip_dir,zip_file))
   request=GET(zip_url, config(ssl.verifypeer = FALSE))
   stop_for_status(request)
   writeBin(content(request), zip_path)
