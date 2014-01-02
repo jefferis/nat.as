@@ -10,8 +10,8 @@
 #' 
 #' plot.neuron
 #' plot3d.neuron
-#' @name neuroanat-package
-#' @aliases neuroanat
+#' @name nat.as-package
+#' @aliases nat.as
 #' @seealso \code{\link{rgl}} which is used for visualisation.
 #' @docType package
 #' @keywords package

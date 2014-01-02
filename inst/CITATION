@@ -1,4 +1,4 @@
-citHeader("To cite neuroanat in publications, please use:")
+citHeader("To cite nat.as in publications, please use:")
 
 citEntry(entry = 'article',
 	Author = c(person("Cachero, Sebastian"), person("Ostrovsky, Aaron D"), person("Yu, Jai Y") ,person("Dickson, Barry J"), person("Jefferis, Gregory S X E")),

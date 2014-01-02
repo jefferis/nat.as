@@ -20,7 +20,7 @@ To install the latest development version from github
 
     install.packages('devtools') # install hadley's devtools
     library(devtools)
-    install_github('neuroanat','jefferis','pub')
+    install_github('nat.as','jefferis','pub')
 
 I have not version controlled the documentation, so this will work but will not
 install the documentation which is a shame. 
@@ -30,15 +30,15 @@ Development Install
 To checkout a version that can be used for development (e.g. with StatET for Eclipse)
 
     cd /some/suitable/dir
-    git clone https://github.com/jefferis/neuroanat.git
-    # git clone jgit:neuroanat # or local repository 
+    git clone https://github.com/jefferis/nat.as.git
+    # git clone jgit:nat.as # or local repository 
 
 
 In R
 
     install.packages('devtools') # install hadley's devtools
     library(devtools)
-    load_all('/some/suitable/dir/neuroanat')
+    load_all('/some/suitable/dir/nat.as')
     test()
     #hack
     load_all()
