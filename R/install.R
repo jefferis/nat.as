@@ -109,3 +109,9 @@ installnload_analysis_suite<-function(...){
   if(!require_analysis_suite()) install_analysis_suite(...)
   if(!require_analysis_suite()) stop("Failed to install and load AnalysisSuite")
 }
+
+#' Return path to root of AnalysisSuite package
+#' @export
+analysis_suite_dir<-function(){
+  file.path(system.file(package="nat.as"),"AnalysisSuite")
+}
