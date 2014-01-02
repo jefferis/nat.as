@@ -2,7 +2,7 @@
 \alias{download_zip}
 \title{Download a specified zip file (even from https url)}
 \usage{
-  download_zip(zip_url, zip_dir = NULL, zip_file = NULL)
+  download_zip(zip_url, zip_dir = ".", zip_file = NULL)
 }
 \arguments{
   \item{zip_url}{URL for zip file}

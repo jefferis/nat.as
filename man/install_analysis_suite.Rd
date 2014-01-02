@@ -8,7 +8,10 @@
   \item{path}{Optional non-standard path that will be
   symlinked to standard locatio (see details)}
 
-  \item{ref}{Git reference ()}
+  \item{ref}{Github reference (defaults to 'master')}
+}
+\value{
+  full path to AnalysisSuite root directory (invisibly)
 }
 \description{
   With default parameters, this function will download the

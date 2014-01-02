@@ -18,7 +18,7 @@
   Start AnalysisSuite by sourcing all function definitions
 }
 \details{
-  \itemize{ \item{load_analysis_suite}{load and error out
+  \describe{ \item{load_analysis_suite}{load and error out
   on failure} \item{require_analysis_suite}{try to load and
   return logical indicating success}
   \item{installnload_analysis_suite}{install if required,
