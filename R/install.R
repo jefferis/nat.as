@@ -47,7 +47,9 @@ download_zip<-function(zip_url,zip_dir='.',zip_file=NULL){
 #' @importFrom httr HEAD config
 #' @seealso \code{\link{HEAD}}
 url_header<-function(url){
-  HEAD(url, config(ssl.verifypeer = FALSE))
+  request=HEAD(url, config(ssl.verifypeer = FALSE))
+  stop_for_status(request)
+  request
 }
 
 #' Download/install AnalysisSuite (or link prior download) to standard location
