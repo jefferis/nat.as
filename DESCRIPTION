@@ -23,13 +23,11 @@ Description: This package is a thin wrapper around the AnalysisSuite
     representing image data for neurons that have been skeletonised but not
     formally traced. This representation also allows morphological comparison
     with neurons including searches/clustering.
-Depends:
-    rgl,
-    RANN
 Imports:
     httr
 Suggests:
-    testthat
+    testthat,
+    nat.utils
 License: GPL (>= 2)
 LazyLoad: yes
 Collate:
