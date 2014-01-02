@@ -12,7 +12,7 @@
 #' plot3d.neuron
 #' @name nat.as-package
 #' @aliases nat.as
-#' @seealso \code{\link{rgl}} which is used for visualisation.
+#' @seealso \code{\link[rgl]{rgl-package}} which is used for visualisation.
 #' @docType package
 #' @keywords package
 NULL
