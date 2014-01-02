@@ -24,9 +24,15 @@ To install the latest development version from github
     # now use nat.as wrapper package to install AnalysisSuite
     library(nat.as)
     install_analysis_suite()
+    
+    # now use nat.as wrapper package to load AnalysisSuite in your code
+    library(nat.as)
+    load_analysis_suite()
+    
+    # or if you want to keep going even if loading fails
+    if(!require_analysis_suite()) message("Failed to load AnalysisSuite")
 
-I have not version controlled the documentation, so this will work but will not
-install the documentation which is a shame. 
+
 
 Development Install
 -------------------
@@ -34,8 +40,7 @@ To checkout a version that can be used for development (e.g. with StatET for Ecl
 
     cd /some/suitable/dir
     git clone https://github.com/jefferis/nat.as.git
-    # git clone jgit:nat.as # or local repository 
-
+    # git clone jgit:nat.as # or local repository
 
 In R
 
