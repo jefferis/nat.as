@@ -21,6 +21,9 @@ To install the latest development version from github
     install.packages('devtools') # install hadley's devtools
     library(devtools)
     install_github('nat.as','jefferis','pub')
+    # now use nat.as wrapper package to install AnalysisSuite
+    library(nat.as)
+    install_analysis_suite()
 
 I have not version controlled the documentation, so this will work but will not
 install the documentation which is a shame. 
