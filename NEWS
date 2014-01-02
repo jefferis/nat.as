@@ -1,0 +1,5 @@
+nat.as 0.3
+==========
+* first functional version
+* still need to decide on best approach for loading code
+  should this happen automatically when library(nat.as) is called?
