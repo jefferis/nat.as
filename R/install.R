@@ -60,19 +60,21 @@ url_header<-function(url){
 #' With default parameters, this function will download the current master of 
 #' AnalysisSuite and install to a standard location
 #' @param path Optional non-standard path that will be symlinked to standard locatio (see details)
-#' @param ref Git reference ()
+#' @param ref Github reference (defaults to 'master')
+#' @return full path to AnalysisSuite Startup.R file (invisibly)
+#' @export
 install_analysis_suite<-function(path=NULL, ref='master'){
   zf=download_zip(paste0('https://github.com/jefferis/AnalysisSuite/zipball/',ref))
   standard_path=file.path(system.file(package='nat.as'),'AnalysisSuite')
   if(is.null(path)) {
+    install_from_zip(zf,standard_path)
+  } else {
     message("Symlinking non-standard path")
     if(file.exists(path)) {
       file.symlink(path,standard_path)
     } else {
       stop("Supplied path must refer to existing download/git checkout!")
     }
-  } else {
-    install_from_zip(zf,standard_path)
   }
   message("Start AnalysisSuite in future with nat.as::load_analysis_suite()")
   full_path<-system.file('AnalysisSuite','Startup.R',package='nat.as')
