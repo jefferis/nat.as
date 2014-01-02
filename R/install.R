@@ -1,11 +1,10 @@
 #' Install source code from a zip file to a specified folder inside nat.as package 
 #' 
 #' @param zip_file Zip file containing source code to install
-#' @param install_dir Subdirectory of nat.as package 
+#' @param install_dir Name of subdirectory that will containing unzipped code
 #' @return logical indicating success 
 #' @author jefferis
-install_from_zip<-function(zip_file,install_dir="AnalysisSuite"){
-  install_dir=system.file(install_dir,package='nat.as')
+install_from_zip<-function(zip_file,install_dir){
   zf=unzip(zip_file,exdir=dirname(install_dir))
   zip_out_dir=dirname(zf[1])
   if(file.exists(install_dir)){
@@ -28,18 +27,14 @@ install_bioc<-function(pkgs="RBGL"){
 #' @param zip_file Name of downloaded zip file (will look at header if NULL) 
 #' @return Character vector of full path to downloaded file
 #' @author jefferis
-#' @export
 #' @importFrom httr GET stop_for_status config content
-download_zip<-function(zip_url,zip_dir=NULL,zip_file=NULL){
-  if(is.null(zip_dir) && is.null(zip))
-    zip_dir="."
+download_zip<-function(zip_url,zip_dir='.',zip_file=NULL){
   h=url_header(zip_url)
-  
-  message("Downloading ",zip_url,' of file size ',h$headers[['content-length']])
+  message("Downloading ",zip_url,' of file size ',h$headers[['content-length']],' bytes')
   if(is.null(zip_file)){
     zip_file=sub(".*filename=",'',h$headers[['content-disposition']])
   }
-    
+  
   zip_path=file.path(zip_dir,zip_file)  
   request=GET(zip_url, config(ssl.verifypeer = FALSE))
   stop_for_status(request)
@@ -61,7 +56,7 @@ url_header<-function(url){
 #' AnalysisSuite and install to a standard location
 #' @param path Optional non-standard path that will be symlinked to standard locatio (see details)
 #' @param ref Github reference (defaults to 'master')
-#' @return full path to AnalysisSuite Startup.R file (invisibly)
+#' @return full path to AnalysisSuite root directory (invisibly)
 #' @export
 install_analysis_suite<-function(path=NULL, ref='master'){
   zf=download_zip(paste0('https://github.com/jefferis/AnalysisSuite/zipball/',ref))
@@ -77,12 +72,12 @@ install_analysis_suite<-function(path=NULL, ref='master'){
     }
   }
   message("Start AnalysisSuite in future with nat.as::load_analysis_suite()")
-  full_path<-system.file('AnalysisSuite','Startup.R',package='nat.as')
+  invisible(standard_path)
 }
 
 #' Start AnalysisSuite by sourcing all function definitions
 #' @details
-#' \itemize{
+#' \describe{
 #'  \item{load_analysis_suite}{load and error out on failure} 
 #'  \item{require_analysis_suite}{try to load and return logical indicating
 #'   success}
@@ -97,8 +92,7 @@ load_analysis_suite<-function(){
 #' @export
 #' @rdname load_analysis_suite
 require_analysis_suite<-function(){
-  t=try(source(system.file('AnalysisSuite','Startup.R',package='nat.as',
-                           mustWork=TRUE)))
+  t=try(source(file.path(analysis_suite_dir(),'R','Code','Startup.R')))
   success<-!inherits(t,"try-error")
 }
 
