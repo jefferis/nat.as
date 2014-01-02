@@ -1,0 +1,8 @@
+export(download_zip)
+export(load_analysis_suite)
+export(require_analysis_suite)
+importFrom(httr,GET)
+importFrom(httr,HEAD)
+importFrom(httr,config)
+importFrom(httr,content)
+importFrom(httr,stop_for_status)
