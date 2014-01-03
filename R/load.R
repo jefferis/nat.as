@@ -1,4 +1,4 @@
-#' Start AnalysisSuite by sourcing all function definitions
+
 #' @details
 #' \describe{
 #'  \item{load_analysis_suite}{load and error out on failure} 
@@ -12,6 +12,9 @@ load_analysis_suite<-function(){
   if(!require_analysis_suite()) stop("Unable to start AnalysisSuite")
 }
 
+#' Start AnalysisSuite by sourcing all function definitions
+#' 
+#' This is designed to be for developer use only.
 #' @export
 #' @rdname load_analysis_suite
 require_analysis_suite<-function(){
@@ -33,4 +36,25 @@ installnload_analysis_suite<-function(...){
 #' @export
 analysis_suite_dir<-function(){
   file.path(system.file(package="nat.as"),"AnalysisSuite")
+}
+
+#' Reload nat.as and AnalysisSuite
+#' 
+#' This is a simple convenience function to unload and reload the package. The
+#' expected use case is when AnalysisSuite code is being modified by a developer
+#' and s/he wants to quickly reload any changes.
+#' @export
+#' @examples
+#' \dontrun{
+#' library(nat.as)
+#' # use
+#' # spot a bug
+#' # hack the code
+#' reload_analysis_suite()
+#' # test the fix
+#' # repeat ...
+#' }
+reload_analysis_suite<-function(){
+  unloadNamespace('nat.as')
+  library('nat.as')
 }
