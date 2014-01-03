@@ -7,16 +7,19 @@
 #' @rdname nat.as-internal
 #' @seealso \code{\link{reload_analysis_suite}}
 .require_analysis_suite<-function(){
-  startup=file.path(analysis_suite_dir(),'R','Code','Startup.R')
+  startup=analysis_suite_dir('R','Code','Startup.R')
   if(!file.exists(startup)) return(FALSE)
   t=try(sys.source(startup,envir=topenv(),keep.source=TRUE),silent=TRUE)
   success<-!inherits(t,"try-error")
 }
 
 #' Return path to root of AnalysisSuite package
+#' 
+#' @param ... Additional arguments (typically path components) passed to file.path
 #' @export
-analysis_suite_dir<-function(){
-  file.path(system.file(package="nat.as"),"AnalysisSuite")
+#' @seealso \code{\link{file.path}}
+analysis_suite_dir<-function(...){
+  file.path(system.file(package="nat.as"),"AnalysisSuite",...)
 }
 
 #' Reload nat.as and AnalysisSuite
