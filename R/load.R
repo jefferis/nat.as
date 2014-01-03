@@ -15,7 +15,9 @@ load_analysis_suite<-function(){
 #' @export
 #' @rdname load_analysis_suite
 require_analysis_suite<-function(){
-  t=try(source(file.path(analysis_suite_dir(),'R','Code','Startup.R')))
+  startup=file.path(analysis_suite_dir(),'R','Code','Startup.R')
+  if(!file.exists(startup)) return(FALSE)
+  t=try(sys.source(startup,envir=topenv(),keep.source=TRUE),silent=TRUE)
   success<-!inherits(t,"try-error")
 }
 
