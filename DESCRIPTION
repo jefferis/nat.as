@@ -35,3 +35,5 @@ Collate:
     'neuronlist.R'
     'install.R'
     'nat.as-package.R'
+    'zzz.R'
+    'load.R'
