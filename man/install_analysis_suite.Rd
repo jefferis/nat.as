@@ -1,6 +1,6 @@
 \name{install_analysis_suite}
 \alias{install_analysis_suite}
-\title{Download/install AnalysisSuite (or link prior download) to standard location}
+\title{Download/install AnalysisSuite codebase}
 \usage{
   install_analysis_suite(path = NULL, ref = "master")
 }
@@ -14,8 +14,25 @@
   full path to AnalysisSuite root directory (invisibly)
 }
 \description{
+  This will download from github (or link an existing
+  download) to a standard location. See easy and developer
+  install sections for recomended use cases.
+}
+\section{Easy install}{
   With default parameters, this function will download the
   current master of AnalysisSuite and install to a standard
-  location
+  location.  This is the easy install form recommended for
+  a typical end user.
+}
+
+\section{Developer install}{
+  The alternative form will make a symbolic link to an
+  existing download / git checkout of AnalysisSuite. This
+  is the recommendation when you are hacking on the main
+  AnalysisSuite codebase (when you will also be interested
+  in the \code{reload_analysis_suite()} function.)
+}
+\seealso{
+  \code{\link{reload_analysis_suite}}
 }
 

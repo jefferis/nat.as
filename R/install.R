@@ -52,14 +52,25 @@ url_header<-function(url){
   request
 }
 
-#' Download/install AnalysisSuite (or link prior download) to standard location
+#' Download/install AnalysisSuite codebase
 #' 
-#' With default parameters, this function will download the current master of 
-#' AnalysisSuite and install to a standard location
-#' @param path Optional non-standard path that will be symlinked to standard locatio (see details)
+#' This will download from github (or link an existing download) to a standard
+#' location. See easy and developer install sections for recomended use cases.
+#' 
+#' @section Easy install: With default parameters, this function will download 
+#'   the current master of AnalysisSuite and install to a standard location. 
+#'   This is the easy install form recommended for a typical end user.
+#' @section Developer install: The alternative form will make a symbolic link to
+#'   an existing download / git checkout of AnalysisSuite. This is the 
+#'   recommendation when you are hacking on the main AnalysisSuite codebase 
+#'   (when you will also be interested in the \code{reload_analysis_suite()} 
+#'   function.)
+#' @param path Optional non-standard path that will be symlinked to standard 
+#'   locatio (see details)
 #' @param ref Github reference (defaults to 'master')
 #' @return full path to AnalysisSuite root directory (invisibly)
 #' @export
+#' @seealso \code{\link{reload_analysis_suite}}
 install_analysis_suite<-function(path=NULL, ref='master'){
   standard_path=file.path(system.file(package='nat.as'),'AnalysisSuite')
   if(is.null(path)) {
@@ -73,6 +84,6 @@ install_analysis_suite<-function(path=NULL, ref='master'){
       stop("Supplied path must refer to existing download/git checkout!")
     }
   }
-  message("Start AnalysisSuite in future with nat.as::load_analysis_suite()")
+  message("Start AnalysisSuite in future with library(nat.as)")
   invisible(standard_path)
 }
