@@ -1,6 +1,7 @@
 export(analysis_suite_dir)
 export(install_analysis_suite)
 export(reload_analysis_suite)
+export(test_analysis_suite)
 exportPattern("^[^\\.]")
 importFrom(httr,GET)
 importFrom(httr,HEAD)

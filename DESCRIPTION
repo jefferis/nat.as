@@ -27,7 +27,8 @@ Imports:
     httr
 Suggests:
     testthat,
-    nat.utils
+    nat.utils,
+    RUnit
 License: GPL (>= 2)
 LazyLoad: yes
 Collate:
