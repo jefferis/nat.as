@@ -61,9 +61,9 @@ url_header<-function(url){
 #' @return full path to AnalysisSuite root directory (invisibly)
 #' @export
 install_analysis_suite<-function(path=NULL, ref='master'){
-  zf=download_zip(paste0('https://github.com/jefferis/AnalysisSuite/zipball/',ref))
   standard_path=file.path(system.file(package='nat.as'),'AnalysisSuite')
   if(is.null(path)) {
+    zf=download_zip(paste0('https://github.com/jefferis/AnalysisSuite/zipball/',ref))
     install_from_zip(zf,standard_path)
   } else {
     message("Symlinking non-standard path")
