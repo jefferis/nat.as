@@ -22,6 +22,16 @@ analysis_suite_dir<-function(...){
   file.path(system.file(package="nat.as"),"AnalysisSuite",...)
 }
 
+#' Check to see if full AnalysisSuite codebase is installed under nat.as package
+#' 
+#' @details Specifically, checks for analysis_suite_dir('R','Code','Startup.R')
+#' @return logical indicating presence of AnalysisSuite installation 
+#' @export
+is_analysis_suite_installed<-function(){
+  # check to see if AnalysisSuite is actually installed
+  file.exists(analysis_suite_dir('R','Code','Startup.R'))
+}
+
 #' Developer utility functions for hacking AnalysisSuite
 #' 
 #' These convenience functions should be useful for anyone working on the AnalysisSuite codebase.

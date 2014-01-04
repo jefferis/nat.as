@@ -1,0 +1,18 @@
+\name{is_analysis_suite_installed}
+\alias{is_analysis_suite_installed}
+\title{Check to see if full AnalysisSuite codebase is installed under nat.as package}
+\usage{
+  is_analysis_suite_installed()
+}
+\value{
+  logical indicating presence of AnalysisSuite installation
+}
+\description{
+  Check to see if full AnalysisSuite codebase is installed
+  under nat.as package
+}
+\details{
+  Specifically, checks for
+  analysis_suite_dir('R','Code','Startup.R')
+}
+
