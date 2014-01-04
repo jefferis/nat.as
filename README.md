@@ -53,6 +53,7 @@ To update the AnalysisSuite code (which is under regular development):
     git pull
 
 Back in R if you want to hack on the AnalysisSuite code
+
     library(nat.as)
     # spot a bug
     # hack code
@@ -69,7 +70,7 @@ that can be used for development (e.g. with Rstudio)
     git clone https://github.com/jefferis/nat.as.git
     # git clone jgit:nat.as # or local repository
 
-    cd /some/other/suitable/dir
+    cd /some/suitable/dir
     git clone https://github.com/jefferis/AnalysisSuite
     # git clone jgit:AnalysisSuite # or local repository
 
