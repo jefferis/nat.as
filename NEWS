@@ -1,3 +1,10 @@
+nat.as 0.4.1
+============
+* safer developer mode install with install_analysis_suite()
+* new is_analysis_suite_installed() function
+* package startup message confined to .onAttach
+* documentation improvements
+
 nat.as 0.4
 ==========
 * significantly more mature package
