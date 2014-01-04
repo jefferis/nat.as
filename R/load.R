@@ -1,11 +1,12 @@
 #' nat.as internal functions
 #' 
 #' This function (which is designed for internal use only) will Start 
-#' AnalysisSuite by sourcing all function definitions. Users should load the
-#' code with \code{library(nat.as)} or \code{reload_analysis_suite()}.
-#' 
+#' AnalysisSuite by sourcing all function definitions and loading key libraries.
+#' Users should load the code with \code{library(nat.as)} or
+#' \code{reload_analysis_suite()}.
 #' @rdname nat.as-internal
 #' @seealso \code{\link{reload_analysis_suite}}
+#' @import nat.utils RANN igraph rgl
 .require_analysis_suite<-function(){
   startup=analysis_suite_dir('R','Code','Startup.R')
   if(!file.exists(startup)) return(FALSE)

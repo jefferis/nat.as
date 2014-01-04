@@ -7,8 +7,9 @@
 \description{
   This function (which is designed for internal use only)
   will Start AnalysisSuite by sourcing all function
-  definitions. Users should load the code with
-  \code{library(nat.as)} or \code{reload_analysis_suite()}.
+  definitions and loading key libraries. Users should load
+  the code with \code{library(nat.as)} or
+  \code{reload_analysis_suite()}.
 }
 \seealso{
   \code{\link{reload_analysis_suite}}

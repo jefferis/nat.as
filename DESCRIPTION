@@ -25,9 +25,13 @@ Description: This package is a thin wrapper around the AnalysisSuite
     with neurons including searches/clustering.
 Imports:
     httr
+Depends:
+    nat.utils,
+    rgl,
+    RANN,
+    igraph
 Suggests:
     testthat,
-    nat.utils,
     RUnit
 License: GPL (>= 2)
 LazyLoad: yes
