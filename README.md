@@ -23,38 +23,56 @@ To install the latest development version from github
     install_github('nat.as','jefferis')
     # now use nat.as wrapper package to install AnalysisSuite
     library(nat.as)
+    # easy install - downloads latest AnalysisSuite code from github
     install_analysis_suite()
+    # or developer install if you have a git checkout that you want to keep up to date / hack.
+    # NB adjust to your preferred path
+    install_analysis_suite("~/projects/AnalysisSuite")
     
     # now use nat.as wrapper package to load AnalysisSuite in your code
     library(nat.as)
-    load_analysis_suite()
     
-    # or if you want to keep going even if loading fails
-    if(!require_analysis_suite()) message("Failed to load AnalysisSuite")
-
-
+    # to hack on the AnalysisSuite code
+    library(nat.as)
+    # spot a bug
+    # hack code
+    reload_analysis_suite()
+    # test
+    test_analysis_suite()
 
 Development Install
 -------------------
-To checkout a version that can be used for development (e.g. with StatET for Eclipse)
+To checkout a version of the pacakage that can be used for development (e.g. with Rstudio)
 
     cd /some/suitable/dir
     git clone https://github.com/jefferis/nat.as.git
     # git clone jgit:nat.as # or local repository
+
+    cd /some/other/suitable/dir
+    git clone https://github.com/jefferis/AnalysisSuite
+    # git clone jgit:AnalysisSuite # or local repository
 
 In R
 
     install.packages('devtools') # install hadley's devtools
     library(devtools)
     load_all('/some/suitable/dir/nat.as')
-    test()
     #hack
+    check()
+    test()
     load_all()
+    
+    # check interaction with AnalysisSuite
+    document(); install()
+    install_analysis_suite('~/projects/AnalysisSuite/'); reload_analysis_suite()
     
     # ready for release
     check()
     build_win() # test for Windows
     release()
+    # or
+    library(gjdevtools)
+    gjrelease()
 
 Details
 =======
