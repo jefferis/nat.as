@@ -1,3 +1,10 @@
+nat.as 0.4
+==========
+* significantly more mature package
+* loads all code with library(nat.as)
+* reload_analysis_suite() / test_analysis_suite() can be used when hacking the
+  AnalysisSuite codebase.
+
 nat.as 0.3
 ==========
 * first functional version
