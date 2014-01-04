@@ -54,24 +54,27 @@ url_header<-function(url){
 
 #' Download/install AnalysisSuite codebase
 #' 
-#' This will download from github (or link an existing download) to a standard
+#' This will download from github (or link an existing download) to a standard 
 #' location. See easy and developer install sections for recomended use cases.
 #' 
 #' @section Easy install: With default parameters, this function will download 
 #'   the current master of AnalysisSuite and install to a standard location. 
 #'   This is the easy install form recommended for a typical end user.
-#' @section Developer install: The alternative form will make a symbolic link to
-#'   an existing download / git checkout of AnalysisSuite. This is the 
-#'   recommendation when you are hacking on the main AnalysisSuite codebase 
-#'   (when you will also be interested in the \code{reload_analysis_suite()} 
+#' @section Developer install: The alternative form will make a symbolic link 
+#'   from an existing download / git checkout of AnalysisSuite to a path within 
+#'   the nat.as package. This is the recommendation when you update
+#'   AnalysisSuite frequently or are hacking on the main AnalysisSuite codebase
+#'   (when you will also be interested in the \code{reload_analysis_suite()}
 #'   function.)
 #' @param path Optional non-standard path that will be symlinked to standard 
-#'   locatio (see details)
+#'   location (see Developer install)
 #' @param ref Github reference (defaults to 'master')
+#' @param force Whether to overwrite an existing symlink (or directory) when 
+#'   using the Developer install mode to symlink an existing path.
 #' @return full path to AnalysisSuite root directory (invisibly)
 #' @export
 #' @seealso \code{\link{reload_analysis_suite}}
-install_analysis_suite<-function(path=NULL, ref='master'){
+install_analysis_suite<-function(path=NULL, ref='master', force=FALSE){
   standard_path=file.path(system.file(package='nat.as'),'AnalysisSuite')
   if(is.null(path)) {
     zf=download_zip(paste0('https://github.com/jefferis/AnalysisSuite/zipball/',ref))
@@ -79,6 +82,15 @@ install_analysis_suite<-function(path=NULL, ref='master'){
   } else {
     message("Symlinking non-standard path")
     if(file.exists(path)) {
+      if(file.exists(standard_path)){
+        if(force){
+          message("Removing existing install at: ",standard_path)
+          unlink(standard_path,recursive=TRUE)
+        } else {
+          stop("There is already an AnalysisSuite checkout at:",standard_path,
+               '\nUse force=TRUE to overwrite.')
+        }
+      }
       file.symlink(path,standard_path)
     } else {
       stop("Supplied path must refer to existing download/git checkout!")

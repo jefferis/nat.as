@@ -2,13 +2,18 @@
 \alias{install_analysis_suite}
 \title{Download/install AnalysisSuite codebase}
 \usage{
-  install_analysis_suite(path = NULL, ref = "master")
+  install_analysis_suite(path = NULL, ref = "master",
+    force = FALSE)
 }
 \arguments{
   \item{path}{Optional non-standard path that will be
-  symlinked to standard locatio (see details)}
+  symlinked to standard locatio (see Developer install)}
 
   \item{ref}{Github reference (defaults to 'master')}
+
+  \item{force}{Whether to overwrite an existing symlink (or
+  directory) when using the Developer install mode to
+  symlink an existing path.}
 }
 \value{
   full path to AnalysisSuite root directory (invisibly)
