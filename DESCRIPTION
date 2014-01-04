@@ -32,8 +32,6 @@ Suggests:
 License: GPL (>= 2)
 LazyLoad: yes
 Collate:
-    'neuron.R'
-    'neuronlist.R'
     'install.R'
     'nat.as-package.R'
     'zzz.R'
