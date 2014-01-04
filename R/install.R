@@ -25,7 +25,7 @@ install_bioc<-function(pkgs="RBGL"){
 #' @param zip_url URL for zip file
 #' @param zip_dir Directory to which zip file will be downloaded 
 #' @param zip_file Name of downloaded zip file (will look at header if NULL) 
-#' @return Character vector of full path to downloaded file
+#' @return Character vector of path to downloaded file
 #' @author jefferis
 #' @importFrom httr GET stop_for_status config content
 download_zip<-function(zip_url,zip_dir='.',zip_file=NULL){
@@ -39,7 +39,7 @@ download_zip<-function(zip_url,zip_dir='.',zip_file=NULL){
   request=GET(zip_url, config(ssl.verifypeer = FALSE))
   stop_for_status(request)
   writeBin(content(request), zip_path)
-  normalizePath(zip_path,mustWork=TRUE)
+  zip_path
 }
 
 #' Get header information from a file
