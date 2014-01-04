@@ -1,5 +1,10 @@
 .onLoad <- function(libname, pkgname) {
-  if(!.require_analysis_suite() && interactive())
+  .require_analysis_suite()
+  invisible()
+}
+
+.onAttach <- function(libname, pkgname) {
+  if(!is_analysis_suite_installed())
     packageStartupMessage('Please use nat.as::install_analysis_suite()',
                           ' to install the main AnalysisSuite codebase!')
   invisible()
