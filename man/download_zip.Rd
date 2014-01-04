@@ -14,7 +14,7 @@
   header if NULL)}
 }
 \value{
-  Character vector of full path to downloaded file
+  Character vector of path to downloaded file
 }
 \description{
   Download a specified zip file (even from https url)

@@ -7,7 +7,7 @@
 }
 \arguments{
   \item{path}{Optional non-standard path that will be
-  symlinked to standard locatio (see Developer install)}
+  symlinked to standard location (see Developer install)}
 
   \item{ref}{Github reference (defaults to 'master')}
 
@@ -31,11 +31,13 @@
 }
 
 \section{Developer install}{
-  The alternative form will make a symbolic link to an
-  existing download / git checkout of AnalysisSuite. This
-  is the recommendation when you are hacking on the main
-  AnalysisSuite codebase (when you will also be interested
-  in the \code{reload_analysis_suite()} function.)
+  The alternative form will make a symbolic link from an
+  existing download / git checkout of AnalysisSuite to a
+  path within the nat.as package. This is the
+  recommendation when you update AnalysisSuite frequently
+  or are hacking on the main AnalysisSuite codebase (when
+  you will also be interested in the
+  \code{reload_analysis_suite()} function.)
 }
 \seealso{
   \code{\link{reload_analysis_suite}}
