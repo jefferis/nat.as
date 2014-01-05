@@ -12,6 +12,9 @@ test_that("can download a github zip file", {
           zf<-download_zip(sample_url,zip_dir = dirname(tf),zip_file = basename(tf)),
           takes_less_than(10),
           info="Check that we can download a github zip file in < 10s")
+      # need to normalise both input (tf) and output (zf) paths to be safe
+      zf=normalizePath(zf)
+      tf=normalizePath(tf)
       expect_that(zf,equals(tf))
       zf2=download_zip(sample_url,zip_dir = dirname(tf))
       expect_that(dirname(zf2),equals(dirname(tf)))
