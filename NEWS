@@ -1,3 +1,7 @@
+nat.as 0.5
+==========
+* Add nat.utils, rgl, RANN and igraph packages as dependencies
+
 nat.as 0.4.1
 ============
 * safer developer mode install with install_analysis_suite()
