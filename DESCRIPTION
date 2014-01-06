@@ -1,7 +1,7 @@
 Package: nat.as
 Type: Package
 Title: NAT: Wrapper for informal neuroanatomy AnalysisSuite codebase
-Version: 0.5
+Version: 0.6
 Date: 2014-01-04
 Author: Greg Jefferis
 Maintainer: Greg Jefferis <jefferis@gmail.com>
@@ -26,7 +26,7 @@ Description: This package is a thin wrapper around the AnalysisSuite
 Imports:
     httr
 Depends:
-    nat (>= 0.2),
+    nat (>= 0.2.1),
     nat.utils,
     rgl,
     RANN,
