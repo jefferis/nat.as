@@ -1,3 +1,7 @@
+nat.as 0.6
+==========
+* Add nat (>0.2) as dependency
+
 nat.as 0.5
 ==========
 * Add nat.utils, rgl, RANN and igraph packages as dependencies

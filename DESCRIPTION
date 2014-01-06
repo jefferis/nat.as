@@ -26,6 +26,7 @@ Description: This package is a thin wrapper around the AnalysisSuite
 Imports:
     httr
 Depends:
+    nat (>= 0.2),
     nat.utils,
     rgl,
     RANN,

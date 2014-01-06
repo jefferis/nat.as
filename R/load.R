@@ -6,7 +6,7 @@
 #' \code{reload_analysis_suite()}.
 #' @rdname nat.as-internal
 #' @seealso \code{\link{reload_analysis_suite}}
-#' @import nat.utils RANN igraph rgl
+#' @import nat nat.utils RANN igraph rgl
 .require_analysis_suite<-function(){
   startup=analysis_suite_dir('R','Code','Startup.R')
   if(!file.exists(startup)) return(FALSE)
