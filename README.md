@@ -39,7 +39,7 @@ We assume that you have installed [R for your platform](http://cran.r-project.or
 
 Details: The first step above takes care of installing all package dependencies 
 from a mixture of [CRAN](http://cran.r-project.org/) and our lab R repository. 
-The second step downloads the latest AnalysisSuite github code in a zip archives.
+The second step downloads the latest AnalysisSuite github code in a zip archive.
 However see below for the Developer install if you become a regular user.
 
 Easy Install of Latest Version
