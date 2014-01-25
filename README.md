@@ -8,9 +8,27 @@ time it should be possible to migrate many of the AnalysisSuite functions
 (currently in a loose bundle of R source code files and associated data) into
 a formal R package that I am incubating at [nat](https://github.com/jefferis/nat).
 
+Quick Start
+===========
+
+For the impatient ...
+
+    # install
+    install.packages('devtools')
+    devtools::install_github('nat','jefferis')
+    devtools::install_github('nat.as','jefferis')
+    nat.as::install_analysis_suite()
+    nat.as::reload_analysis_suite()
+    
+    # now use it
+    library(nat.as)
+    plot3d(kcs20,col=type)
+    ?nat
+
+
 Installation
 ============
-There are 3 modes of installation increasing order of difficulty and flexibility. If you just want to try things out, go with option 1, release version. If you want to keep up to date regularly/hack on the AnalysisSuite code go with option 3, Developer Install (this is what I recommend for the lab). If you want to use the latest package version but git and the shell scare you, then go with option 2.
+There are 3 modes of installation increasing in order of difficulty and flexibility. If you just want to try things out, go with option 1, release version. If you want to keep up to date regularly/hack on the AnalysisSuite code go with option 3, Developer Install (this is what I recommend for the lab). If you want to use the latest package version but git and the shell scare you, then go with option 2.
 
   * Release Version
   * Easy Install of Latest Version
