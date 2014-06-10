@@ -23,6 +23,7 @@ For the impatient ...
     # now use it
     library(nat.as)
     plot3d(kcs20,col=type)
+    ?nat.as
     ?nat
 
 
