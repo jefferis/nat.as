@@ -1,3 +1,8 @@
+nat.as 0.6.1
+==========
+* fix bug in downloading AnalysisSuite from github (#1)
+* dev: minor build tidying
+
 nat.as 0.6
 ==========
 * Add nat (>0.2) as dependency
