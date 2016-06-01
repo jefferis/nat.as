@@ -36,7 +36,7 @@ download_zip<-function(zip_url,zip_dir='.',zip_file=NULL){
   }
   
   zip_path=file.path(zip_dir,zip_file)
-  request=GET(zip_url, config(ssl.verifypeer = FALSE))
+  request=GET(zip_url)
   stop_for_status(request)
   writeBin(content(request), zip_path)
   zip_path
@@ -47,7 +47,7 @@ download_zip<-function(zip_url,zip_dir='.',zip_file=NULL){
 #' @importFrom httr HEAD config
 #' @seealso \code{\link{HEAD}}
 url_header<-function(url){
-  request=HEAD(url, config(ssl.verifypeer = FALSE))
+  request=HEAD(url)
   stop_for_status(request)
   request
 }
