@@ -69,7 +69,7 @@ reload_analysis_suite<-function(){
 #' @export
 #' @rdname analysis_suite_devtools
 test_analysis_suite<-function(testdirs=NULL, browse=is.null(testdirs)){
-  if(!require("RUnit")) stop("Please install RUnit!")
+  if(!requireNamespace("RUnit")) stop("Please install RUnit!")
   testroot=analysis_suite_dir('R','Tests')
   if(is.null(testdirs)){
     # TestDirs=list.dirs(testroot,recursive=FALSE)
@@ -78,9 +78,9 @@ test_analysis_suite<-function(testdirs=NULL, browse=is.null(testdirs)){
   } else {
     TestDirs=file.path(testroot,testdirs)
     MyTestSuites<-lapply(TestDirs,
-                         function(x) defineTestSuite(
+                         function(x) RUnit::defineTestSuite(
                            basename(x),x,testFileRegexp="^runit.+.[srR]{1}$"))
-    TestResults=runTestSuite(MyTestSuites)
+    TestResults=RUnit::runTestSuite(MyTestSuites)
     print(TestResults)
   }
 }
