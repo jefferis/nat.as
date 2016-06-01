@@ -41,3 +41,4 @@ Collate:
     'nat.as-package.R'
     'zzz.R'
     'load.R'
+RoxygenNote: 5.0.1
