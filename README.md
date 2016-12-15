@@ -14,9 +14,9 @@ Quick Start
 For the impatient ...
 
     # install
-    install.packages('devtools')
-    devtools::install_github('nat','jefferis')
-    devtools::install_github('nat.as','jefferis')
+    if(!require('devtools')) install.packages('devtools')
+    devtools::install_github('jefferis/nat')
+    devtools::install_github('jefferis/nat.as')
     nat.as::install_analysis_suite()
     nat.as::reload_analysis_suite()
     
@@ -27,59 +27,20 @@ For the impatient ...
     ?nat
 
 
-Installation
-============
-There are 3 modes of installation increasing in order of difficulty and flexibility. If you just want to try things out, go with option 1, release version. If you want to keep up to date regularly/hack on the AnalysisSuite code go with option 3, Developer Install (this is what I recommend for the lab). If you want to use the latest package version but git and the shell scare you, then go with option 2.
+Installation Details
+====================
+There are 2 modes of installation increasing in order of difficulty and flexibility. If you just want to try things out, go with option 1. If you want to keep up to date regularly/hack on the AnalysisSuite code go with option 2, Developer Install (this is what I recommend for the lab).
 
-  * Release Version
-  * Easy Install of Latest Version
+  * devtools Install of Latest Version
   * Developer Install of Latest Version
   
-Release Version
----------------
-The easiest approach is to install the latest released version of the package
-from our lab respository. You can then use this to install the AnalysisSuite
-codebase directly from github. Everything happens from within R.
 
-We assume that you have installed [R for your platform](http://cran.r-project.org/). Then:
-
-    # first install R nat.as package and its dependencies
-    install.packages('nat.as',
-      repos=c(getOption("repos"),'http://flybrain.mrc-lmb.cam.ac.uk/R'),
-      type='both',dependencies=TRUE)
-    
-    # now use nat.as wrapper package to install AnalysisSuite
-    library(nat.as)
-    install_analysis_suite()
-    reload_analysis_suite()
-    
-    # in future use nat.as wrapper package to load AnalysisSuite in your code
-    library(nat.as)
-
-Details: The first step above takes care of installing all package dependencies 
-from a mixture of [CRAN](http://cran.r-project.org/) and our lab R repository. 
-The second step downloads the latest AnalysisSuite github code in a zip archive.
-However see below for the Developer install if you become a regular user.
-
-Easy Install of Latest Version
+devtools Install of Latest Version
 ------------------------------
 The easiest approach to install the latest development version of the
-package + AnalysisSuite code from github. However see below for the Developer
+package + AnalysisSuite code from github as described in the **Quick Start** section above. 
+However see below for the Developer
 install if you become a regular user and frequently update AnalysisSuite.
-
-    install.packages('devtools') # install hadley's devtools
-    library(devtools)
-    install_github('nat.as','jefferis')
-    
-    # now use nat.as wrapper package to install AnalysisSuite
-    library(nat.as)
-    install_analysis_suite()
-    reload_analysis_suite()
-    
-    # in future use nat.as wrapper package to load AnalysisSuite in your code
-    library(nat.as)
-
-
 
 Developer Install of Latest Version
 -----------------------------------
@@ -111,9 +72,9 @@ Back in R if you want to hack on the AnalysisSuite code
     # test
     test_analysis_suite()
 
-Developing the Package
-======================
-In the rare case that you want to  checkout a version of the nat.as wrapper package
+Developing the nat.as Package
+=============================
+In the rare case that you want to checkout a version of the **nat.as** wrapper package
 that can be used for development (e.g. with Rstudio)
 
     cd /some/suitable/dir
